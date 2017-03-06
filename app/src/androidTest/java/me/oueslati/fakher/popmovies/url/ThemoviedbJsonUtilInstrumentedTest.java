@@ -28,5 +28,15 @@ public class ThemoviedbJsonUtilInstrumentedTest {
         assertEquals(actualURLString, expectedUrlString);
     }
 
+    @Test
+    public void buildURLTopRated_isCorrect() throws Exception {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        String expectedUrlString = "https://api.themoviedb.org/3/movie/top_rated?" +
+                "api_key=" + appContext.getString(R.string.themoviedb_application_key);
+        TheMoviedbNetworkUtil.API_Key = appContext.getString(R.string.themoviedb_application_key);
+        URL actualURL = TheMoviedbNetworkUtil.buildURLTopRated();
+        String actualURLString = actualURL.toString();
+        assertEquals(actualURLString, expectedUrlString);
+    }
 
 }

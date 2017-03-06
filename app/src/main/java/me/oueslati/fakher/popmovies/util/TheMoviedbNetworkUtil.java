@@ -20,6 +20,7 @@ public class TheMoviedbNetworkUtil {
     private static final String TAG = TheMoviedbNetworkUtil.class.getSimpleName();
     private static final String THEMOVIEDB_API_URL = "https://api.themoviedb.org/3";
     private static final String POPULAR_MOVIES_ENTRY_POINT = "/movie/popular";
+    private static final String TOP_RATED_MOVIES_ENTRY_POINT = "/movie/top_rated";
 
 
     private static final String API_KEY_PARAM = "api_key";
@@ -39,6 +40,17 @@ public class TheMoviedbNetworkUtil {
         }
     }
 
+    public static URL buildURLTopRated() {
+        Uri searchQueryUri = Uri.parse(THEMOVIEDB_API_URL + TOP_RATED_MOVIES_ENTRY_POINT).buildUpon()
+                .appendQueryParameter(API_KEY_PARAM, API_Key)
+                .build();
+        try {
+            return new URL(searchQueryUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     /**
      * Perform a HTTP request using an URL and return the response in a String format.
