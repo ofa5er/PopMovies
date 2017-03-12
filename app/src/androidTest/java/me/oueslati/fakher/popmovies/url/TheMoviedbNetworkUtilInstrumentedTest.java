@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 
 @RunWith(AndroidJUnit4.class)
-public class ThemoviedbJsonUtilInstrumentedTest {
+public class TheMoviedbNetworkUtilInstrumentedTest {
     @Test
     public void buildURLMostPopular_isCorrect() throws Exception {
         Context appContext = InstrumentationRegistry.getTargetContext();

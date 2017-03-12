@@ -3,14 +3,13 @@ package me.oueslati.fakher.popmovies.Model;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class Movie {
-    
+
     private String posterPath;
     private Boolean adult;
     private String overview;
     private String releaseDate;
-    private List<Object> genreIds = null;
+    private List<Integer> genreIds = null;
     private Integer id;
     private String originalTitle;
     private String originalLanguage;
@@ -54,11 +53,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public List<Object> getGenreIds() {
+    public List<Integer> getGenreIds() {
         return genreIds;
     }
 
-    public void setGenreIds(List<Object> genreIds) {
+    public void setGenreIds(List<Integer> genreIds) {
         this.genreIds = genreIds;
     }
 
@@ -141,5 +140,4 @@ public class Movie {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
 }
